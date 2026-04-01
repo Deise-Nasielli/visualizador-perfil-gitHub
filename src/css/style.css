@@ -11,14 +11,14 @@
   --card: hsl(0, 0%, 100%);
   --primary: hsl(222.2, 47.4%, 11.2%);
   --primary-foreground: hsl(210, 40%, 98%);
-  
+
   --spacing-xs: 0.5rem;
   --spacing-sm: 0.75rem;
   --spacing-md: 1rem;
   --spacing-lg: 1.5rem;
   --spacing-xl: 2rem;
   --spacing-2xl: 3rem;
-  
+
   --font-xs: 0.75rem;
   --font-sm: 0.875rem;
   --font-md: 1rem;
@@ -26,19 +26,19 @@
   --font-xl: 1.5rem;
   --font-2xl: 1.875rem;
   --font-3xl: 2rem;
-  
+
   --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  
+
   --transition: all 0.2s;
 }
 
 body {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #fda085 100%);
   background-size: 400% 400%;
-  font-family: "Inter", "Segoe UI", sans-serif;  
-  text-align: center;    
+  font-family: "Inter", "Segoe UI", sans-serif;
+  text-align: center;
   padding-bottom: 100px;
   min-height: 100vh;
   color: var(--foreground);
@@ -46,19 +46,19 @@ body {
 }
 
 main {
-  display: flex;  
+  display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: var(--spacing-2xl) var(--spacing-md);      
+  padding: var(--spacing-2xl) var(--spacing-md);
 }
 
-.devicon-github-original{
+.devicon-github-original {
   font-size: var(--font-3xl);
   margin-bottom: var(--spacing-xl);
   color: #FFFFFF;
 }
 
-.section{
+.section {
   padding: 4rem 0;
   border-top: 1px solid var(--border);
 }
@@ -159,7 +159,7 @@ main {
   height: 110px;
   border-radius: 50%;
   object-fit: cover;
-  
+
 }
 
 .profile-card .profile-info {
@@ -192,8 +192,13 @@ main {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media (max-width: 700px) {
@@ -214,9 +219,6 @@ main {
   gap: var(--spacing-lg);
   margin-top: var(--spacing-lg);
   padding: var(--spacing-lg);
-  background: var(--muted);
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
 }
 
 .profile-counters .followers,
@@ -235,21 +237,77 @@ main {
   font-weight: 600;
   color: var(--primary);
 }
-.profile-counters{
+
+.profile-counters {
   display: flex;
   gap: 32px;
   justify-content: center;
   margin: 40px 0;
 }
 
-.profile-counters h4{
+.profile-counters h4 {
   font-weight: normal;
   font-size: 0.74rem;
   margin-bottom: 8px;
   text-transform: uppercase;
 }
 
-.profile-counters span{
+.profile-repositories {
+  width: 100%;
+  margin-top: var(--spacing-2xl);
+}
+
+.profile-repositories h2 {
+  font-size: var(--font-2xl);
+  margin-bottom: var(--spacing-lg);
+  color: var(--primary);
+  text-align: center;
+}
+
+.repositories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: var(--spacing-md);
+}
+
+.repository-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-md);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.repository-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.repository-card h3 {
+  font-size: var(--font-lg);
+  margin: 0 0 0.5rem;
+  color: var(--primary);
+}
+
+.repository-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  color: var(--muted-foreground);
+  font-size: var(--font-sm);
+}
+
+.repository-stats span {
+  display: flex;
+  background-color: var(--muted);
+  border-radius: 0.4rem;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+
+.profile-counters span {
   font-size: 2rem;
   font-weight: bold;
 }
