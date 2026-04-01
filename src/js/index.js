@@ -4,7 +4,7 @@ import { renderProfile, showAlert } from './ui.js';
 const btnSearch = document.getElementById('btn-search');
 const inputSearch = document.getElementById('input-search');
 
-btnSearch.addEventListener('click', async () => {
+async function searchUser() {
     const userName = inputSearch.value.trim();
 
     if (userName) {
@@ -20,5 +20,12 @@ btnSearch.addEventListener('click', async () => {
     } else {
         showAlert("Por favor, digite um nome de usuário para buscar o perfil no GitHub.");
     }
-});
+}
 
+btnSearch.addEventListener('click', searchUser);
+
+inputSearch.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        searchUser();
+    }
+});
